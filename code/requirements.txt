@@ -1,0 +1,9 @@
+sentence-transformers
+torch
+transformers
+llama-cpp-python
+grpcio
+grpcio-tools
+fastapi
+uvicorn
+pydantic

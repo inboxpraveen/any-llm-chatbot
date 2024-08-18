@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package chatbot;
+
+service Chatbot {
+  rpc GenerateResponse (ChatRequest) returns (ChatResponse) {}
+  rpc HealthCheck (HealthCheckRequest) returns (HealthCheckResponse) {}
+}
+
+message ChatRequest {
+  string query = 1;
+}
+
+message ChatResponse {
+  string response = 1;
+}
+
+message HealthCheckRequest {}
+
+message HealthCheckResponse {
+  string status = 1;
+}
+
+# To generate gRPC code:
+# python -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. any-llm-chatbot.proto
